@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>each demo</title>
+  <style>
+  div {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+    border: 2px gray solid;
+    text-align: center;
+}
+span {
+    color: red; 
+}
+
+
+</style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+<button>Click to Change colors</button>
+<span></span>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="stop">Stop</div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+$( "button" ).click(function() {
+$( "div" ).each(function( index, element ) {
+// current element is represented by the this $( element ).css( "backgroundColor", "green" );
+ if ( $( this ).is( "#stop" ) ) {
+      $( "span" ).text( "Stopped at div index #" + index );
+      return false;
+} });
+});
+</script>
+</body>
+</html>
